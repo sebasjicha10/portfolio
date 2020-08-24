@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Sebastian Jimenez">
+        <meta name="author" content="sebasjicha10">
+
+        <title>Sebastián Jiménez Portfolio</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="styles/index.css">
+
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/0b431ba239.js" crossorigin="anonymous"></script>
+
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
+
+        <!-- React, React-Dom, and Babel -->
+        <script type="application/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js" crossorigin></script>
+        <script type="application/javascript" src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js" crossorigin></script>
+        <script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js" crossorigin></script>
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <script type="text/babel">
+
+            // List of all the Projects
+            const projects = {
+                "artificial_intelligence": [
+                    {"title": "Traffic", "tools": [], "description": "AI to identify which traffic sign appears in a photograph.", "source_code": "https://github.com/sebasjicha10/traffic", "video": "https://youtu.be/jouUEvA9HM0", "live": "", "mockup": ""},
+                    {"title": "Heredity", "tools": [], "description": "AI to assess the likelihood that a person will have a particular genetic trait.", "source_code": "https://github.com/sebasjicha10/heredity", "video": "https://youtu.be/2waBj20RtH4", "live": "", "mockup": ""},
+                    {"title": "Minesweeper", "tools": [], "description": "AI that plays Minesweeper.", "source_code": "https://github.com/sebasjicha10/minessweeper", "video": "https://youtu.be/ONzszehcBX0", "live": "", "mockup": ""},
+                    {"title": "Shopping", "tools": [], "description": "AI to predict whether online shopping customers will complete a purchase.", "source_code": "https://github.com/sebasjicha10/shopping", "video": "https://youtu.be/ng2J1NH5Bp0", "live": "", "mockup": ""},
+                    {"title": "Nim", "tools": [], "description": "AI that teaches itself to play Nim through reinforcement learning", "source_code": "https://github.com/sebasjicha10/nim", "video": "https://youtu.be/yrsim6fi8xk", "live": "", "mockup": ""},
+                    {"title": "Page Rank", "tools": [], "description": "AI to rank web pages by importance.", "source_code": "https://github.com/sebasjicha10/pagerank", "video": "https://youtu.be/FDM4my1x3W8", "live": "", "mockup": ""},
+                    {"title": "Crossword", "tools": [], "description": "AI to generate crossword puzzles.", "source_code": "https://github.com/sebasjicha10/crossword", "video": "https://youtu.be/2QNXVw0nBwM", "live": "", "mockup": ""},
+                    {"title": "Questions", "tools": [], "description": "AI to answer questions.", "source_code": "https://github.com/sebasjicha10/questions", "video": "https://youtu.be/qwBq_sFNt1Q", "live": "", "mockup": ""},
+                ],
+
+                "web_development": [
+                    {"title": "Pizza", "tools": ["Django"], "description": "Web app that handles a restaurant’s online orders.", "source_code": "https://github.com/sebasjicha10/pizza", "video": "https://youtu.be/YbKi5s2aHKk", "live": "", "mockup": "https://drive.google.com/drive/folders/1XCvhn_P7QsJxBg8vp6BpkpLHVx7c_jeu?usp=sharing"},
+                    {"title": "BookJar", "tools": ["Flask", "SQL"], "description": "BookJar is a book review website.", "source_code": "https://github.com/sebasjicha10/book-jar", "video": "https://youtu.be/zCaWgDhzVxQ", "live": "", "mockup": "https://drive.google.com/drive/folders/1v6ZqbHtYUoZVN-TOxTVJ09I50AIGwem-?usp=sharing"},
+                    {"title": "Flack", "tools": ["Flask", "Flask-SocketIO"], "description": "Online messaging service.", "source_code": "https://github.com/sebasjicha10/flack", "video": "", "live": "", "mockup": "https://drive.google.com/drive/folders/177ucWk9jB9rMKrFqN0-1WgDZTgkuJENi?usp=sharing"},
+                    {"title": "Enrollment", "tools": ["Flask", "SQL"], "description": "Simple Enrollment Page for University Courses.", "source_code": "https://github.com/sebasjicha10/enrollment", "video": "https://youtu.be/N4fIXs1261c", "live": "", "mockup": ""},
+                    {"title": "Drum Machine", "tools": ["React", "Redux"], "description": "Drum Machine with 9 clickable pad elements.", "source_code": "https://github.com/sebasjicha10/drummachine", "video": "", "live": "https://sebasjicha10.github.io/drummachine/", "mockup": "https://drive.google.com/drive/folders/1X8C5BIwJ5scYeqtbvCMtqrBvMBWu1xgQ?usp=sharing"},
+                    {"title": "D3", "tools": ["D3"], "description": "Bar Chart, Scatterplot Graph, Heat Map, Choropleth Map, and Treemap Diagram.", "source_code": "https://github.com/sebasjicha10/d3", "video": "", "live": "https://sebasjicha10.github.io/d3/", "mockup": ""},
+                    {"title": "Markdown Previewer", "tools": ["React", "Redux"], "description": "Markdown Previewer that renders GitHub flavored text as HTML.", "source_code": "https://github.com/sebasjicha10/markdownpreview", "video": "", "live": "https://sebasjicha10.github.io/markdownpreview/", "mockup": "https://drive.google.com/drive/folders/12N034SJQZ1Xb5LCDxsHY7E4oXBClspaY?usp=sharing"},
+                    {"title": "Calculator", "tools": ["React"], "description": "Calculator built using React JS", "source_code": "https://github.com/sebasjicha10/calculator", "video": "", "live": "https://sebasjicha10.github.io/calculator/", "mockup": "https://drive.google.com/drive/folders/1O_n4ecfTMkY13VJeTqfbg5kAgZaBK4S-?usp=sharing"},
+                ],
+
+                "mobile_development": [
+                    {"title": "Movie Browser", "tools": [], "description": "Movie browser to search by movie, series, episode and more.", "source_code": "https://github.com/sebasjicha10/movie-browser", "video": "https://youtu.be/e_7CAffoRiU", "live": "https://snack.expo.io/@sebasjicha10/cf826b", "mockup": "https://drive.google.com/drive/folders/1PIxemJWMjwJ5bFdqndwhML832rbN7OUV?usp=sharing"},
+                    {"title": "Pomodoro Timer", "tools": [], "description": "Pomodoro Timer", "source_code": "https://github.com/sebasjicha10/pomodoro-timer", "video": "", "live": "https://snack.expo.io/@sebasjicha10/2c127b", "mockup": ""},
+                    {"title": "Fitness network", "tools": [], "description": "Simple fitness network (only static implemented).", "source_code": "https://github.com/sebasjicha10/fitness-network", "video": "https://youtu.be/UbeUxJWglu8", "live": "", "mockup": "https://drive.google.com/drive/folders/1dxcT0b9-kk3MfuuwbvVK6YXtsXmlmYJ-?usp=sharing"},
+                ]
+            }
+
+            const Header = () => {
+                return (
+                    <header>
+                        <div class="header_section">
+                            <img id="portrait" class="img-fluid" alt="Portrait Picture" src="./assets/portrait.png" />
+                        </div>
+
+                        <div class="header_section">
+                            <h1 id="name">Sebastián Jiménez</h1>
+                        </div>
+
+                        <div id="header_links" class="header_section">
+                            <a class="header_link" href="#ArtificialIntelligence">Artificial Intelligence</a>
+                            <a class="header_link" href="#WebDevelopment">Web Development</a>
+                            <a class="header_link" href="#MobileDevelopment">Mobile Development</a>
+                        </div>
+                    </header>
+                )
+            }
+
+            const Introduction = () => {
+                return (
+                    <div>
+                        <div id="introduction">
+                            <div id="intro_left">
+                                {/* Homebase */}
+                                <div class="intro_left_section">
+                                    <h4 class="intro_left_title">Homebase</h4>
+                                    <p id="location">San Jose, Costa Rica</p>
+                                </div>
+                            
+                                {/* Languages */}
+                                <div class="intro_left_section">
+                                    <h4 class="intro_left_title">Languages</h4>
+
+                                    <div class="language" onclick="">
+                                        <p class="language_title">Spanish</p>
+                                        <div class="lan_balls_section">
+                                            <div class="lan_ball filled_ball"></div>
+                                            <div class="lan_ball filled_ball"></div>
+                                            <div class="lan_ball filled_ball"></div>
+                                            <div class="lan_ball filled_ball"></div>
+                                            <div class="lan_ball filled_ball"></div>
+                                            <div class="lan_ball filled_ball"></div>
+                                        </div>
+                                        <div class="lan_description">
+                                            <p class="lan_level">Native</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="language">
+                                        <p class="language_title">English</p>
+                                        <div class="lan_balls_section">
+                                            <div class="lan_ball filled_ball"></div>
+                                            <div class="lan_ball filled_ball"></div>
+                                            <div class="lan_ball filled_ball"></div>
+                                            <div class="lan_ball filled_ball"></div>
+                                            <div class="lan_ball filled_ball"></div>
+                                            <div class="lan_ball filled_ball"></div>
+                                        </div>
+                                        <div class="lan_description">
+                                            <p class="lan_level">Bilingual</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="language">
+                                        <p class="language_title">French</p>
+                                        <div class="lan_balls_section">
+                                            <div class="lan_ball filled_ball"></div>
+                                            <div class="lan_ball filled_ball"></div>
+                                            <div class="lan_ball filled_ball"></div>
+                                            <div class="lan_ball filled_ball"></div>
+                                            <div class="lan_ball no_fill_ball"></div>
+                                            <div class="lan_ball no_fill_ball"></div>
+                                        </div>
+                                        <div class="lan_description">
+                                            <p class="lan_level">B2 - CEF</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="language">
+                                        <p class="language_title">Portuguese</p>
+                                        <div class="lan_balls_section">
+                                            <div class="lan_ball filled_ball"></div>
+                                            <div class="lan_ball filled_ball"></div>
+                                            <div class="lan_ball no_fill_ball"></div>
+                                            <div class="lan_ball no_fill_ball"></div>
+                                            <div class="lan_ball no_fill_ball"></div>
+                                            <div class="lan_ball no_fill_ball"></div>
+                                        </div>
+                                        <div class="lan_description">
+                                            <p class="lan_level">A2 - Learning</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                {/* Programming Languages */}
+                                <div class="intro_left_section">
+                                    <h4 class="intro_left_title">Programming Languages</h4>
+                                    <ul id="programming_lang">
+                                        <li>Python</li>
+                                        <li>JavaScript + HTML & CSS</li>
+                                        <li>SQL</li>
+                                        <li>C</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div id="intro_right">
+                                <h3 id="hello">Hello!</h3>
+                                <p class="intro_sentence">Im Sebastián, a Business Graduate and aspiring technologist. I am passionate about Business and Tech, and eager to contribute in areas in which the two interrelate.</p>
+                                <p class="intro_sentence">My studies in Business Administration covered Marketing, Finances, and Human Resources areas.</p>
+                                <p class="intro_sentence">On the technology side, I hold Professional Certificates in Web Development and Artificial Intelligence.</p>
+                                <a id="contact_intro" href="#footer">Contact me</a>
+                            </div>
+                        </div>
+                        <div id="arrow_section">
+                            <i id="arrow" class="fas fa-chevron-down fa-2x animate__animated animate__delay-5s animate__bounce animate__slow"></i>
+                        </div>
+                    </div>
+                )
+            }
+
+            const Project = (props) => {
+
+                const title = props.title
+                const tools = props.tools
+                const description = props.description
+                const source_code = props.source_code
+                const video = props.video
+                const live = props.live
+                const mockup = props.mockup
+                const project_id = title.split(" ").join("")
+
+                let tool_list
+                if (tools) {
+                    tool_list = (
+                        tools.map((tool) => <p class="no_hover">{tool}</p>)
+                    )
+                }
+
+                let video_project 
+                if (video) {
+                    video_project = (
+                        <a class="project_links" href={video} target="_blank">
+                            <i class="fab fa-youtube project_icons"></i>
+                            <div class="link_text">Video</div>
+                        </a>
+                    )
+                } 
+
+                let live_project 
+                if (live) {
+                    live_project = (
+                        <a class="project_links" href={live} target="_blank">
+                            <i class="fas fa-wifi project_icons"></i>
+                            <div class="link_text">Live</div>
+                        </a>
+                    )
+                } 
+
+                let mockup_project 
+                if (mockup) {
+                    mockup_project = (
+                        <a class="project_links" href={mockup} target="_blank">
+                            <i class="fas fa-palette project_icons"></i>
+                            <div class="link_text">Mockup</div>
+                        </a>
+                    )
+                } 
+
+                return (
+                    <div class="project_square" onclick="">
+                        <div class="unactivated_square" onclick="">
+                            <h3 class="project_name no_hover">{title}</h3>
+                            {tool_list}
+                        </div>
+
+                        <div class="activated_square" onclick="">
+                            <p id="project_description">{description}</p>
+                            <div id="links_section">
+                                <a class="project_links" href={source_code} target="_blank">
+                                    <i class="fas fa-code project_icons"></i>
+                                    <div class="link_text">Source Code</div>
+                                </a>
+                                {video_project}
+                                {live_project}
+                                {mockup_project}
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+
+            const Section = (props) => {
+
+                // Props
+                const technology_input = props.technologies
+                const section = props.section_title
+                const section_id = section.split(" ").join("")
+
+                // Section Technologies
+                let techs
+                if (technology_input) {
+                    techs = (
+                        technology_input.map((tech) => <p class="technology">{tech}</p>)
+                    )
+                }
+
+                let section_projects
+                let group_projects
+                let section_icon
+
+                // Projects for AI
+                if (section == "Artificial Intelligence") {
+                    group_projects = projects["artificial_intelligence"]
+                    section_icon = (<i class="fas fa-project-diagram section_icon"></i>)
+                } else if (section == "Web Development") {
+                    group_projects = projects["web_development"]
+                    section_icon = (<i class="fas fa-laptop-code section_icon"></i>)
+                } else if (section == "Mobile Development") {
+                    group_projects = projects["mobile_development"]
+                    section_icon = (<i class="fas fa-mobile-alt section_icon"></i>)
+                }
+
+                // Loop throught AI projects
+                section_projects = (
+                    group_projects.map((project) => {
+                        
+                        return (
+                            <Project 
+                                title={project.title}
+                                tools={project.tools}m
+                                description={project.description}
+                                source_code={project.source_code}
+                                video={project.video}
+                                live={project.live}
+                                mockup={project.mockup}
+                            />
+                        )
+
+                    })
+                )
+
+                return (
+                    <div class="section_in_body" id={section_id}>
+                        <div class="section_header">
+                            <h2 class="section_title">{section}</h2> 
+                            {section_icon}
+                        </div>
+
+                        <div id="technologies_used">
+                            {techs}
+                        </div>
+                        <div id="projects_grid">
+                            {section_projects}
+                        </div>
+                    </div>
+                )
+            }
+
+            const Body = () => {
+
+                return (
+                    <div id="body_section">
+                        <Section 
+                            section_title="Artificial Intelligence"
+                            technologies={["Search Algorithms", "Optimization", "Machine Learning", "Neural Networks", "Natural Language Processing"]}
+                        />
+
+                        <Section 
+                            section_title="Web Development"
+                            technologies={["Django", "Flask", "React", "Redux", "Bootstrap", "Adobe XD", "D3"]}
+                        />
+
+                        <Section 
+                            section_title="Mobile Development"
+                            technologies={["React", "React Native", "React Navigation"]}
+                        />
+                    </div>
+                )
+            }
+
+            const Footer = () => {
+                return (
+                    <footer>
+                        <div id="footer">
+                            <h2 id="contact_title">Contact me</h2>
+
+                            <a class="contact_option" href="mailto:sebasjicha10@gmail.com?">
+                                <i class="fas fa-envelope contact_icon"></i>
+                                <p>sebasjicha10@gmail.com</p>
+                            </a>
+
+                            <div class="contact_option">
+                                <i class="fas fa-mobile-alt contact_icon"></i>
+                                <p>+506 84295573</p>
+                            </div>
+
+                            <a class="contact_option" href="https://www.linkedin.com/in/sebastianjimenezcr/" target="_blank">
+                                <i class="fab fa-linkedin contact_icon"></i>
+                                <p>www.linkedin.com/in/sebastianjimenezcr</p>
+                            </a>
+
+                            <a class="contact_option" href="https://drive.google.com/file/d/1egvf-nJKJzxnzfFXDT5ASPBruCzWBRtu/view?usp=sharing" target="_blank">
+                                <i class="fas fa-file contact_icon"></i>
+                                <p>Resume</p>
+                            </a>
+                        </div>
+
+                        <div id="more_projects">
+                            <a id="more_projects_link" href="https://github.com/sebasjicha10?tab=repositories" target="_blank">
+                                <i id="github_icon" class="fab fa-github"></i>
+                                <p>More of my projects</p>
+                            </a>
+                        </div>
+
+                    </footer>
+                )
+            }
+
+            // App Component
+            const App = () => {
+                return (
+                    <div id="container" class="container-fluid">
+                        <Header />
+                        <Introduction />
+                        <Body />
+                        <Footer />
+                    </div>
+                )
+            }
+
+            // Render App
+            ReactDOM.render(
+            <App />, 
+            document.getElementById('root'));
+        
+        </script>
+    </body>
+</html>

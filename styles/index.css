@@ -1,0 +1,558 @@
+:root {
+    --blue: #0D1522;
+}
+
+body {
+    background-color: white;
+    font-family: Courier, monospace;
+}
+
+#root {
+    width: 90%;
+    margin: auto;
+}
+
+/* Header Section */
+
+header {
+    margin-top: 10px;
+    border-bottom: 0.5px solid #C9C9C9;
+    margin-bottom: 30px;
+}
+
+.header_section {
+    text-align: center;
+    margin: 15px 0px 15px 0px;
+}
+
+#portrait {
+    border-radius: 100%;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+#header_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.header_link {
+    text-decoration: none;
+    color: var(--blue);
+    font-size: 16px;
+}
+
+.header_link:hover {
+    text-decoration: none;
+    color: var(--blue);
+    opacity: 0.6;
+}
+
+/* Introduction Section */
+
+#introduction {
+    margin-top: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--blue);
+}
+
+#intro_left {
+    min-width: 350px;
+    flex-grow: 1;
+    border-right: 0.5px solid #C9C9C9;
+}
+
+.intro_left_section {
+    margin-bottom: 30px;
+}
+
+.intro_left_title {
+    font-size: 12px;
+}
+
+#location {
+    margin-left: 50px;
+    font-weight: bold;
+}
+
+.language {
+    margin: 0px 0px 15px 50px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding-right: 40px;
+}
+
+.lan_balls_section {
+    padding-bottom: 0;
+    display: flex;
+
+}
+
+.lan_ball {
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    margin-left: 5px;
+    border-radius: 100%;
+}
+
+.filled_ball {
+    background-color: var(--blue);
+}
+
+.no_fill_ball {
+    border: 0.5px solid #C9C9C9;
+}
+
+.language_title {
+    margin: 0;
+}
+
+/* Handle Hovering over Language */
+.language:hover {
+    transform: scale(1.05);
+}
+
+.language:hover .lan_balls_section {
+    display: none;
+}
+
+.language:hover .lan_description {
+    display: block;
+}
+
+.lan_description {
+    width: 60%;
+    text-align: center;
+    color: white;
+    background-color: var(--blue);
+    font-weight: normal;
+    border-radius: 25px;
+    display: none;
+}
+
+.lan_level {
+    margin: 0
+}
+
+#programming_lang {
+    list-style-type: none;
+    padding-left: 50px;
+    list-style: none;
+    font-weight: bold;
+}
+
+#intro_right {
+    margin-left: 100px;
+}
+
+#hello {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.intro_sentence {
+    margin-bottom: 40px;
+}
+
+#contact_intro {
+    font-size: 28px;
+    text-decoration: underline;
+    color: var(--blue);
+}
+
+#contact_intro:hover {
+    opacity: 0.6;
+}
+
+#arrow_section {
+    text-align: center;
+    margin: 40px 0px 40px 0px;
+}
+
+#arrow {
+    color: var(--blue);
+    width: 50px;
+}
+
+/* Body Section */
+
+#body_section {
+    margin-bottom: 90px;
+}
+
+.section_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.section_in_body {
+    border-bottom: 0.5px solid #C9C9C9;
+    padding-top: 60px;
+}
+
+.section_title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.section_icon {
+    font-size: 28px;
+    display: inline;
+    margin-left: 10px;
+}
+
+#technologies_used { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin-bottom: 45px;
+}
+
+#projects_grid {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-left: 10px;
+}
+
+.project_square {
+    border: 3px solid var(--blue);
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    margin: 0px 30px 60px 30px;
+    border-radius: 30px;
+}
+
+/* Handle project hovering */
+
+.no_hover {
+    pointer-events: none;
+}
+
+.project_square:hover {
+    transition-duration: 1.5s;
+    background-color: var(--blue);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.project_square:hover .unactivated_square {
+    display: none;
+}
+
+.project_square:hover .activated_square {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project_name {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.unactivated_square {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    border-radius: 24px;
+}
+
+.activated_square {
+    height: 100%;
+    border-radius: 24px;
+    padding: 30px 10px 10px 10px;
+    display: none;
+    color: white;
+}
+
+#project_description {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#links_section {
+    align-self: center;
+    width: 100%;
+}
+
+.project_links {
+    font-size: 13px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-left: 15px;
+}
+
+.project_links:hover {
+    text-decoration: none;
+    color: white;
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+.project_links:hover .link_text{
+    text-decoration: underline;
+}
+
+.link_text {
+    margin-left: 10px;
+}
+
+.project_icons {
+    font-size: 25px;
+}
+
+/* Contact me Section */
+
+#contact_title {
+    margin-bottom: 30px;
+}
+
+.contact_option {
+    width: fit-content;
+    color: var(--blue);
+    display: flex;
+    flex-direction: row;
+}
+
+.contact_icon {
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.contact_option:hover {
+    color: var(--blue);
+    opacity: 0.9;
+}
+
+#more_projects {
+    text-align: center;
+    margin: 30px 0px 90px 0px;
+}
+
+#more_projects_link {
+    width: fit-content;
+    color: var(--blue);
+}
+
+#more_projects_link:hover {
+    opacity: 0.9;
+}
+
+#github_icon {
+    font-size: 130px;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+
+    #root {
+        width: 100%;
+    }
+
+    /* Header Section */
+    header {
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+
+    .header_section {
+        margin: 10px 0px 10px 0px;
+    }
+
+    #name {
+        font-size: 30px;
+    }
+
+    #portrait {
+        max-width: 130px;
+        max-height: 130px;
+    }
+
+    #header_links {
+        flex-direction: column;
+    }
+
+    .header_link {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    /* Introduction Section */
+
+    #introduction {
+        margin-top: 30px;
+        flex-direction: column-reverse;
+    }
+
+    #intro_left {
+        border-right: none;
+        min-width: 50px;
+    }
+
+    .intro_left_section {
+        margin-bottom: 10px;
+    }
+
+    #location {
+        margin-left: 10px;
+    }
+
+    .language {
+        margin: 0px 0px 15px 10px;
+        padding-right: 20px;
+    }
+
+    #programming_lang {
+        padding-left: 10px;
+    }
+
+    #intro_right {
+        margin: 0px 0px 30px 0px;
+    }
+
+    #hello {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .intro_sentence {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    #contact_intro {
+        font-size: 26px;
+    }
+
+    #arrow_section {
+        display: none;
+    }
+
+    /* Body Section */
+
+    #body_section {
+        margin-bottom: 30px;
+    }
+
+    .section_header {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .section_in_body {
+        padding-top: 30px;
+    }
+
+    .section_title {
+        font-size: 18px;
+    }
+
+    .section_icon {
+        font-size: 22px;
+    }
+
+    #technologies_used { 
+        display: none;
+    }
+
+    #projects_grid {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0px;
+    }
+
+    .project_square {
+        width: 220px;
+        height: 220px;
+        margin: 0px 0px 30px 0px;
+    }
+
+    /* Handle project hovering */
+
+    .project_name {
+        margin-bottom: 0px;
+        font-size: 22px;
+    }
+
+    .activated_square {
+        padding: 10px 5px 5px 5px;
+    }
+
+    #project_description {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .project_links {
+        font-size: 11px;
+        margin-bottom: 5px;
+        padding-left: 10px;
+    }
+
+    .project_icons {
+        font-size: 20px;
+    }
+
+    /* Contact me Section */
+
+    #footer {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap
+    }
+
+    #contact_title {
+        margin-bottom: 28px;
+    }
+
+    .contact_option {
+        flex-direction: column;
+        margin-bottom: 20px;
+        font-size: 11px;
+    }
+
+    .contact_icon {
+        margin: 0px 0px 5px 0px;
+    }
+
+    #more_projects {
+        margin: 30px 0px 60px 0px;
+    }
+
+    #more_projects_link {
+        font-size: 14px;
+    }
+
+    #github_icon {
+        font-size: 100px;
+    }
+
+}
+
+
+
