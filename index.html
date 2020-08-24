@@ -26,6 +26,11 @@
         <script type="application/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js" crossorigin></script>
         <script type="application/javascript" src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js" crossorigin></script>
         <script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js" crossorigin></script>
+
+        <!-- Safari on OS hover enabling -->
+        <script>
+            document.addEventListener("touchstart", function() {}, false)
+        </script>
     </head>
     <body>
         <div id="root"></div>
@@ -98,7 +103,7 @@
                                 <div class="intro_left_section">
                                     <h4 class="intro_left_title">Languages</h4>
 
-                                    <div class="language" onclick="">
+                                    <div class="language">
                                         <p class="language_title">Spanish</p>
                                         <div class="lan_balls_section">
                                             <div class="lan_ball filled_ball"></div>
@@ -236,13 +241,13 @@
                 } 
 
                 return (
-                    <div class="project_square" onclick="">
-                        <div class="unactivated_square" onclick="">
+                    <div class="project_square">
+                        <div class="unactivated_square">
                             <h3 class="project_name no_hover">{title}</h3>
                             {tool_list}
                         </div>
 
-                        <div class="activated_square" onclick="">
+                        <div class="activated_square">
                             <p id="project_description">{description}</p>
                             <div id="links_section">
                                 <a class="project_links" href={source_code} target="_blank">
