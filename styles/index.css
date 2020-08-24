@@ -262,6 +262,11 @@ header {
     justify-content: center;
 }
 
+.activated_square:hover #links_section {
+    transition-delay: 0.1s;
+    visibility: visible;
+}
+
 .project_name {
     font-weight: bold;
     margin-bottom: 10px;
@@ -291,6 +296,7 @@ header {
 #links_section {
     align-self: center;
     width: 100%;
+    visibility: hidden;
 }
 
 .project_links {
